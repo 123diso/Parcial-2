@@ -11,9 +11,14 @@ class Root extends HTMLElement {
     }
 
     render() {
-        if (!this.shadowRoot) return;
+        if(this.shadowRoot) {
+            this.shadowRoot.innerHTML = `
+            <div>
+            <plan-element></plan-element>
+            </div>
 
-        this.shadowRoot.innerHTML = `app`;
+            `
+        }
     }
 }
 
